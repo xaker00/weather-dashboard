@@ -10,7 +10,7 @@ $('#search').on('click',function(event){
 })
 
 function updateCity(city){
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?units=imperial&q=" + city + "&appid=" + key;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=" + city + "&appid=" + key;
     fetch(queryURL)
     .then(response => response.json())
     .then(function(data){
@@ -29,7 +29,7 @@ function updateCity(city){
                 wind: data2.current.wind_speed,
                 humidity: data2.current.humidity,
                 uvIndex: data2.current.uvi,
-                icon: 'http://openweathermap.org/img/wn/' + data2.current.weather[0].icon + '.png'
+                icon: iconUrl(data2.current.weather[0].icon)
             });
             renderFiveDay(data2.daily);
 
@@ -70,5 +70,5 @@ function renderFiveDay(data){
 
 
 function iconUrl(data){
-    return 'http://openweathermap.org/img/wn/' + data + '.png';
+    return 'https://openweathermap.org/img/wn/' + data + '.png';
 }
