@@ -1,0 +1,20 @@
+
+
+.day{
+    box-sizing: border-box;
+    width: 19%;
+    display: inline-block;
+    background-color: #33475A;
+    margin-left: .5%;
+    margin-right: .5%;
+    color: white;
+    padding: 1%;
+}
+.day-header{
+    width: 100%;
+    display: block;
+}
+
+#five-day{
+    width: 100%;
+}
